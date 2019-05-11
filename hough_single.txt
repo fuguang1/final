@@ -1,0 +1,25 @@
+function hough_single(method,para,num)
+I_1 = imread('test4 copy.bmp');
+figure(1+num*6);
+subplot(1,3,1);imshow(I_1);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test4 copy.bmp',method,para);
+I_2 = imread('test2.png');
+figure(2+num*6);
+subplot(1,3,1);imshow(I_2);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test2.png',method,para);
+I_3 = imread('test3.jpg');
+figure(3+num*6);
+subplot(1,3,1);imshow(I_3);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test3.jpg',method,para);
+I_4 = imread('test4.bmp');
+figure(4+num*6);
+subplot(1,3,1);imshow(I_4);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test4.bmp',method,para);
+I_5 = imread('test5.png');
+figure(5+num*6);
+subplot(1,3,1);imshow(I_5);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test5.png',method,para);
+I_6 = imread('test6.jpg');
+figure(6+num*6);
+subplot(1,3,1);imshow(I_6);title(['origin ',method,' para=',num2str(para)]);
+hough_line('test6.jpg',method,para);

@@ -1,0 +1,12 @@
+function object_dect(image)
+I = imread(image);
+log = edge(I,'log');
+subplot(2,3,2);imshow(log);title('Laplace of gaussian');
+roberts = edge(I,'Roberts');
+subplot(2,3,3);imshow(roberts);title('Roberts');
+prewitt = edge(I,'Prewitt');
+subplot(2,3,4);imshow(prewitt);title('Prewitt');
+sobel = edge(I,'Sobel');
+subplot(2,3,5);imshow(sobel);title('Sobel');
+canny = edge(I,'Canny');
+subplot(2,3,6);imshow(canny);title('Canny');

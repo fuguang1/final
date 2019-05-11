@@ -1,0 +1,22 @@
+function hough_line(image,meth,par)
+I = imread(image);
+canny = edge(I,meth);
+[H,T,R] = hough(canny,'RhoResolution',par,'ThetaResolution',par);
+subplot(1,3,2);
+imshow(H,[],'XData',T,'YData',R,'InitialMagnification','fit');
+title('hough place');
+peak = houghpeaks(H,3);
+line = houghlines(canny,T,R,peak);
+axis on,axis square,hold on;
+x_index = peak(:,2);
+y_index = peak(:,1);
+x_point = T(x_index);
+y_point = R(y_index);
+plot(x_point,y_point,'*','color','yellow');
+subplot(1,3,3);imshow(I),title('the lines'),hold on;
+line = houghlines(canny,T,R,peak);
+for k = 1:length(line)
+    lines = [line(k).point1; line(k).point2];
+    plot(lines(:,1),lines(:,2),'LineWidth',2,'Color','green');
+end
+

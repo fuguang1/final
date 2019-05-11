@@ -1,0 +1,7 @@
+clc;
+clear all;
+hough_single('Canny',1,0);
+hough_single('Sobel',1,1);
+hough_single('Prewitt',1,2);
+hough_single('Canny',0.5,3);
+hough_single('Canny',2,4);
